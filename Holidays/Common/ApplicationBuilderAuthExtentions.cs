@@ -1,6 +1,6 @@
 ﻿namespace Holidays.Web.Common
 {
-    using Holidays.Web.Models;
+    using Holidays.Models;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
