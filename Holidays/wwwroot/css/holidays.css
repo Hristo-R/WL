@@ -1,0 +1,33 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: Tahoma,Verdana,Arial,sans-serif;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+h2 {
+    text-align: center;
+    color: #366fe9;
+}
+
+
+#centre {
+    width: 650px;
+    margin: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: '. . .';
+    grid-gap: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+}
