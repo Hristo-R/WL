@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Holidays.Web.Controllers
+﻿namespace Holidays.Web.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
     public class HolidaysController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Sithonia()
         {
             return View();
         }
