@@ -11,6 +11,9 @@
         {
         }
 
-        public DbSet<Hotel_OlympicBibis> Hotel_OlympicBibis { get; set; }
+        public DbSet<Hotel_OlympicBibis_table> Hotel_OlympicBibis_table { get; set; }
+
+        public DbSet<HotelOlympicBibis> Hotel_OlympicBibis { get; set; }
+
     }
 }
