@@ -10,7 +10,7 @@
 
         public string Galery { get; set; }
 
-        public string Booking { get; set; }
+        public string Condition { get; set; }
 
         public HotelOlympicBibisTable Table { get; set; }
 
