@@ -28,6 +28,6 @@
 
         public int HotelOlympicBibisId { get; set; }
 
-        public HotelOlympicBibis HotelOlympicBibis { get; set; }
+        public virtual HotelOlympicBibis HotelOlympicBibis { get; set; }
     }
 }

@@ -72,8 +72,7 @@ namespace Holidays.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HotelOlympicBibisId")
-                        .IsUnique();
+                    b.HasIndex("HotelOlympicBibisId");
 
                     b.ToTable("HotelOlympicBibisTable");
                 });
@@ -246,8 +245,8 @@ namespace Holidays.Data.Migrations
             modelBuilder.Entity("Holidays.Models.HotelOlympicBibisTable", b =>
                 {
                     b.HasOne("Holidays.Models.HotelOlympicBibis", "HotelOlympicBibis")
-                        .WithOne("Table")
-                        .HasForeignKey("Holidays.Models.HotelOlympicBibisTable", "HotelOlympicBibisId")
+                        .WithMany("Table")
+                        .HasForeignKey("HotelOlympicBibisId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
