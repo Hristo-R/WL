@@ -7,7 +7,7 @@
 
     public static class ApplicationBuilderAuthExtentions
     {
-        private const string DefaultAdminPassword = "whitelabel2";
+        private const string DefaultAdminPassword = "wl2";
 
         private static readonly IdentityRole[] roles =
         {
@@ -34,6 +34,7 @@
                 }
 
                 var user = await userManager.FindByNameAsync("admin");
+
                 if (user == null)
                 {
                     user = new User()
