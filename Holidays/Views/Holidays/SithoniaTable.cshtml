@@ -1,0 +1,177 @@
+﻿@using Holidays.Web.ViewModels
+
+@model IEnumerable<HotelOlympicBibisTableRowsViewModel>
+
+@{
+    ViewData["Title"] = "Sithonia";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/css/sithonia.css" type="text/css" />
+    <script src="~/js/sithonia.js"></script>
+</head>
+
+<body>
+    <div id="centre">
+        <a href="/holidays/index">
+            <h2 style="text-align:center">&#9664;&nbsp; ОРГАНИЗИРАНИ ПОЧИВКИ - ГЪРЦИЯ - ЛЯТО 2019</h2>
+        </a>
+        </br>
+
+        <h1>ХАЛКИДИКИ СИТОНИЯ</h1>
+        <hr>
+        <h3>ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ</h3>
+        <p><strong>Разположение:</strong> Разположен в на 900 м. от селището Метаморфоси и на 200 метра от плажа, в близост до хотел Blue Dolphin.</p>
+        <p><strong>Хотелски услуги:</strong> Ресторант, Бар, Паркинг, Басейн, Детска площадка, баскетболно игрище, мини маркет, безплатен безжичен интернет в общите части. Изхранването е на блок маса. Хотелът разполага с условия за хора в неравностойно положение. Чадъри и шезлонги на плажа – платени.</p>
+        <p><strong>Стаи:</strong> 29 студиа и апартаменти с:  Телевизор, Климатик, Хладилник, Баня, Балкон</p>
+        </br>
+
+        <div class="row">
+            <div class="column">
+                <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis6-1024x768.jpeg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis7-1024x768.jpeg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis5-1024x768.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis4-1024x768.jpg" style="width:100%;" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis3-1024x768.jpeg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis2-1024x768.jpeg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <br>
+
+            <div class="modal-content">
+
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 6</div>
+                    <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis6-1024x768.jpeg" style="width:650px">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 6</div>
+                    <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis7-1024x768.jpeg" style="width:650px">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 6</div>
+                    <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis5-1024x768.jpeg" style="width:650px">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis4-1024x768.jpg" style="width:650px">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis3-1024x768.jpeg" style="width:650px">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis2-1024x768.jpeg" style="width:650px">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="column">
+                    <img class="demo cursor" src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis6-1024x768.jpeg" style="width:100%" onclick="currentSlide(1)" alt="ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis7-1024x768.jpeg" style="width:100%" onclick="currentSlide(2)" alt="ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis5-1024x768.jpeg" style="width:100%" onclick="currentSlide(3)" alt="ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis4-1024x768.jpg" style="width:100%" onclick="currentSlide(4)" alt="ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis3-1024x768.jpeg" style="width:100%" onclick="currentSlide(5)" alt="ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="https://www.melitours.bg/wp-content/uploads/2018/12/olympic_bibis2-1024x768.jpeg" style="width:100%" onclick="currentSlide(6)" alt="ХОТЕЛ “OLYMPIC BIBIS” *** – МЕТАМОРФОСИ – СИТОНИЯ">
+                </div>
+            </div>
+        </div>
+
+        </br>
+        <p style="color:rgb(255, 0, 0)" ;><strong>РАННИ ЗАПИСВАНИЯ –  ДО ДАТА 31/03/2019 – ПЛАЩАНЕ 50% ДО 16/04/2019</strong></p>
+
+        <div class="scroller">
+            <div class="outer">
+                <div class="inner">
+                    <table>
+                        @{ int counter = 0; }
+                        @foreach (var row in Model)
+                        {
+                            @if (counter == 0)
+                            {
+                                <tr>
+                                    <th class="fix">@row.Accommodation</th>
+                                    <th><div align="center">@row.Period01</div></th>
+                                    <th><div align="center">@row.Period02</div></th>
+                                    <th><div align="center">@row.Period03</div></th>
+                                    <th><div align="center">@row.Period04</div></th>
+                                    <th><div align="center">@row.Period05</div></th>
+                                    <th><div align="center">@row.Period06</div></th>
+                                    <th><div align="center">@row.Period07</div></th>
+                                    <th><div align="center">@row.Period08</div></th>
+                                    <th><div align="center">@row.Period09</div></th>
+                                    <th><div align="center">@row.Period10</div></th>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td class="fix">@row.Accommodation</td>
+                                    <td><div align="center">@row.Period01<div>&nbsp;</div></div></td>
+                                    <td><div align="center">@row.Period02</div></td>
+                                    <td><div align="center">@row.Period03</div></td>
+                                    <td><div align="center">@row.Period04</div></td>
+                                    <td><div align="center">@row.Period05</div></td>
+                                    <td><div align="center">@row.Period06</div></td>
+                                    <td><div align="center">@row.Period07</div></td>
+                                    <td><div align="center">@row.Period08</div></td>
+                                    <td><div align="center">@row.Period09</div></td>
+                                    <td><div align="center">@row.Period10</div></td>
+                                </tr>
+                            }
+
+                            counter++;
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+        <p><strong><u>ЦЕНАТА</u></strong> е на човек, в лева, за пакет включващ: <strong>Транспорт</strong> в двете посоки, <strong style="color:rgb(255, 0, 179)" ;>7 нощувки със закуски и вечери</style></strong> на блок-маса и медицинска застраховка!</p>
+        <p><strong style="color:rgb(0, 0, 255)" ;>Забележка:</strong> Капацитетът на Двойната стая е максимум 3+1 бебе (0-1,99г)</p>
+        <p><strong style="color:rgb(0, 0, 255)" ;>Забележка:</strong> Капацитетът на Тройната стая с допълнително легло е максимум 3+1 дете (2-5,99г)</p>
+        <p style="color:rgb(255, 0, 0)" ;>*Цената не включва туристическа такса от 1,50 € на стая на вечер, която се заплаща на място в хотела.</p>
+        <p><strong style="color:rgb(255, 0, 179)" ;>Анулационни срокове:</strong><strong style="color:rgb(100, 100, 100)" ;> от 21 до 8 дни преди отпътуване – 50% неустойка; от 7 до 1 ден преди отпътуване – 100% неустойка.</strong></p>
+        <hr>
+    </div>
+</body>
+</html>
