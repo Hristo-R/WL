@@ -5,13 +5,11 @@
 
     public abstract class BaseController : Controller
     {
-        private readonly HolidaysDbContext db;
+        //protected BaseController()
+        //{
+        //    this.Db = new HolidaysDbContext();
+        //}
 
-        protected BaseController()
-        {
-            this.Db = db;
-        }
-
-        public HolidaysDbContext Db { get; }
+        //public HolidaysDbContext Db { get; }
     }
 }

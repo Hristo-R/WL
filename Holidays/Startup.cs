@@ -36,7 +36,8 @@ namespace Holidays
 
             services.AddDbContext<HolidaysDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"),
+                    dbOptions => dbOptions.MigrationsAssembly("Holidays.Data")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<HolidaysDbContext>();
 
