@@ -1,6 +1,6 @@
 ﻿namespace Holidays.Web.ViewModels
 {
-    public class HotelOlympicBibisTableRawsViewModel
+    public class HotelOlympicBibisTableRowsViewModel
     {
         public int Id { get; set; }
 
@@ -26,6 +26,6 @@
 
         public string Period10 { get; set; }
 
-        public int HotelOlympicBibisId { get; set; }
+        //public int HotelOlympicBibisId { get; set; }
     }
 }

@@ -4,6 +4,6 @@
 
     public class HotelOlympicBibisTableViewModel
     {
-        public IEnumerable<HotelOlympicBibisTableRawsViewModel> HotelOlympicBibisTable { get; set; }
+        public IEnumerable<HotelOlympicBibisTableRowsViewModel> HotelOlympicBibisTable { get; set; }
     }
 }
