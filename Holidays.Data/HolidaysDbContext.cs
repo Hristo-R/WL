@@ -14,10 +14,5 @@
         public DbSet<HotelOlympicBibisTable> HotelOlympicBibisTable { get; set; }
 
         public DbSet<HotelOlympicBibis> HotelOlympicBibis { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("DefaultConnection");
-        }
     }
 }
