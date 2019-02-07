@@ -43,6 +43,7 @@
                     Period10 = x.Period10
                 }).ToList();
 
+
             return this.View(table);
         }
     }
