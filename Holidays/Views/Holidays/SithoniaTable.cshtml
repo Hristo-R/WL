@@ -12,7 +12,10 @@
 
 <head>
     <link rel="stylesheet" href="~/css/sithonia.css" type="text/css" />
-    <script src="~/js/sithonia.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script type="text/javascript" src="~/js/CRUD_jQuery.js"></script>
+    <script type="text/javascript" src="~/js/sithonia.js"></script>
 </head>
 
 <body>
@@ -118,12 +121,12 @@
         </div>
 
         </br>
-        <p style="color:rgb(255, 0, 0)";><strong>РАННИ ЗАПИСВАНИЯ –  ДО ДАТА 31/03/2019 – ПЛАЩАНЕ 50% ДО 16/04/2019</strong></p>
+        <p style="color:rgb(255, 0, 0)" ;><strong>РАННИ ЗАПИСВАНИЯ –  ДО ДАТА 31/03/2019 – ПЛАЩАНЕ 50% ДО 16/04/2019</strong></p>
 
         <div class="scroller">
             <div class="outer">
                 <div class="inner">
-                    <table>
+                    <table id="tblRows" class="table">
                         @{ int counter = 0; }
                         @foreach (var row in Model)
                         {
@@ -131,32 +134,39 @@
                             {
                                 <tr>
                                     <th class="fix">@row.Accommodation</th>
-                                    <th><div align="center">@row.Period01</div></th>
-                                    <th><div align="center">@row.Period02</div></th>
-                                    <th><div align="center">@row.Period03</div></th>
-                                    <th><div align="center">@row.Period04</div></th>
-                                    <th><div align="center">@row.Period05</div></th>
-                                    <th><div align="center">@row.Period06</div></th>
-                                    <th><div align="center">@row.Period07</div></th>
-                                    <th><div align="center">@row.Period08</div></th>
-                                    <th><div align="center">@row.Period09</div></th>
-                                    <th><div align="center">@row.Period10</div></th>
+                                    <th class="period01"><div align="center">@row.Period01</div></th>
+                                    <th class="period02"><div align="center">@row.Period02</div></th>
+                                    <th class="period03"><div align="center">@row.Period03</div></th>
+                                    <th class="period04"><div align="center">@row.Period04</div></th>
+                                    <th class="period05"><div align="center">@row.Period05</div></th>
+                                    <th class="period06"><div align="center">@row.Period06</div></th>
+                                    <th class="period07"><div align="center">@row.Period07</div></th>
+                                    <th class="period08"><div align="center">@row.Period08</div></th>
+                                    <th class="period09"><div align="center">@row.Period09</div></th>
+                                    <th class="period10"><div align="center">@row.Period10</div></th>
+                                    <th style="width:150px"><div></div></th>
                                 </tr>
                             }
                             else
                             {
                                 <tr>
                                     <td class="fix">@row.Accommodation</td>
-                                    <td><div align="center">@row.Period01<div>&nbsp;</div></div></td>
-                                    <td><div align="center">@row.Period02</div></td>
-                                    <td><div align="center">@row.Period03</div></td>
-                                    <td><div align="center">@row.Period04</div></td>
-                                    <td><div align="center">@row.Period05</div></td>
-                                    <td><div align="center">@row.Period06</div></td>
-                                    <td><div align="center">@row.Period07</div></td>
-                                    <td><div align="center">@row.Period08</div></td>
-                                    <td><div align="center">@row.Period09</div></td>
-                                    <td><div align="center">@row.Period10</div></td>
+                                    <td class="period01"><div align="center">@row.Period01<div>&nbsp;</div></div></td>
+                                    <td class="period02"><div align="center">@row.Period02</div></td>
+                                    <td class="period03"><div align="center">@row.Period03</div></td>
+                                    <td class="period04"><div align="center">@row.Period04</div></td>
+                                    <td class="period05"><div align="center">@row.Period05</div></td>
+                                    <td class="period06"><div align="center">@row.Period06</div></td>
+                                    <td class="period07"><div align="center">@row.Period07</div></td>
+                                    <td class="period08"><div align="center">@row.Period08</div></td>
+                                    <td class="period09"><div align="center">@row.Period09</div></td>
+                                    <td class="period10"><div align="center">@row.Period10</div></td>
+                                    <td>
+                                        <a class="Edit" href="javascript:;">Edit</a>
+                                        <a class="Update" href="javascript:;" style="display:none">Update</a>
+                                        <a class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                                        <a class="Delete" href="javascript:;">Delete</a>
+                                    </td>
                                 </tr>
                             }
 
@@ -166,6 +176,54 @@
                 </div>
             </div>
         </div>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width: 50px">
+                    p01:<br />
+                    <input type="text" id="txt01" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p02:<br />
+                    <input type="text" id="txt02" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p03:<br />
+                    <input type="text" id="txt03" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p04:<br />
+                    <input type="text" id="txt04" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p05:<br />
+                    <input type="text" id="txt05" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p06:<br />
+                    <input type="text" id="txt06" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p07:<br />
+                    <input type="text" id="txt07" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p08:<br />
+                    <input type="text" id="txt08" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p09:<br />
+                    <input type="text" id="txt09" style="width:60px" />
+                </td>
+                <td style="width: 50px">
+                    p10:<br />
+                    <input type="text" id="txt10" style="width:60px" />
+                </td>
+                <td style="width: 30px">
+                    <br />
+                    <input type="button" id="btnAdd" value="Add" />
+                </td>
+            </tr>
+        </table>
         <p><strong><u>ЦЕНАТА</u></strong> е на човек, в лева, за пакет включващ: <strong>Транспорт</strong> в двете посоки, <strong style="color:rgb(255, 0, 179)" ;>7 нощувки със закуски и вечери</style></strong> на блок-маса и медицинска застраховка!</p>
         <p><strong style="color:rgb(0, 0, 255)" ;>Забележка:</strong> Капацитетът на Двойната стая е максимум 3+1 бебе (0-1,99г)</p>
         <p><strong style="color:rgb(0, 0, 255)" ;>Забележка:</strong> Капацитетът на Тройната стая с допълнително легло е максимум 3+1 дете (2-5,99г)</p>
