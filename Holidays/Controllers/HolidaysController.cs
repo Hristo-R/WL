@@ -24,6 +24,7 @@
             return View();
         }
 
+        // GET
         public IActionResult SithoniaTable()
         {
             var table = this.db.HotelOlympicBibisTable.Select(x =>
