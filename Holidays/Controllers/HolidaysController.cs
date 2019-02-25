@@ -52,13 +52,13 @@
         [HttpPost]
         public ActionResult UpdateRow(HotelOlympicBibisTable row)
         {
-            //    var rows = db.HotelOlympicBibisTable;
-            //    HotelOlympicBibisTable updatedRows = (from r in rows
-            //                                where r.Id == row.Id
-            //                                select r).FirstOrDefault();
-            //    updatedRows.Period01 = row.Period01;
-            //    updatedRows.Period02 = row.Period02;
-            //    rows.SaveChanges();
+        //    var rows = db.HotelOlympicBibisTable;
+        //    HotelOlympicBibisTable updatedRows = (from r in rows
+        //                                where r.Id == row.Id
+        //                                select r).FirstOrDefault();
+        //    updatedRows.Period01 = row.Period01;
+        //    updatedRows.Period02 = row.Period02;
+        //    rows.SaveChanges();
 
             return new EmptyResult();
         }
