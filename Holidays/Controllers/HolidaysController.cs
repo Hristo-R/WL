@@ -45,35 +45,31 @@
                     Period10 = x.Period10
                 }).ToList();
 
-
             return this.View(table);
         }
 
-<<<<<<< .mine
+        [HttpPost]
+        public JsonResult InsertRow(HotelOlympicBibisTable row)
+        {
+            var newRow = new HotelOlympicBibisTable();
+            this.db.Add(newRow);
+            this.db.SaveChanges();
+           
+            return Json(row);
+        }
+
         [HttpPost]
         public ActionResult UpdateRow(HotelOlympicBibisTable row)
         {
-        //    var rows = db.HotelOlympicBibisTable;
-        //    HotelOlympicBibisTable updatedRows = (from r in rows
-        //                                where r.Id == row.Id
-        //                                select r).FirstOrDefault();
-        //    updatedRows.Period01 = row.Period01;
-        //    updatedRows.Period02 = row.Period02;
-        //    rows.SaveChanges();
-=======
-        //[HttpPost]
-        //public ActionResult UpdateRow(HotelOlympicBibisTable row)
-        //{
-        //    //    var rows = db.HotelOlympicBibisTable;
-        //    //    HotelOlympicBibisTable updatedRows = (from r in rows
-        //    //                                where r.Id == row.Id
-        //    //                                select r).FirstOrDefault();
-        //    //    updatedRows.Period01 = row.Period01;
-        //    //    updatedRows.Period02 = row.Period02;
-        //    //    rows.SaveChanges();
->>>>>>> .theirs
+            //    var rows = db.HotelOlympicBibisTable;
+            //    HotelOlympicBibisTable updatedRows = (from r in rows
+            //                                where r.Id == row.Id
+            //                                select r).FirstOrDefault();
+            //    updatedRows.Period01 = row.Period01;
+            //    updatedRows.Period02 = row.Period02;
+            //    rows.SaveChanges();
 
-        //    return new EmptyResult();
-        //}
+            return new EmptyResult();
+        }
     }
 }
