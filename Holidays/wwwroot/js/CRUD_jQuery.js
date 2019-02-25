@@ -86,7 +86,7 @@ $("body").on("click", "#btnAdd", function () {
 			if ($("#tblRows tr:last-child span").eq(0).html() != "&nbsp;") {
 				row = row.clone();
 			}
-			AppendRow(row, r.fix, r.period01, r.period02, r.period03, r.period04, r.period05, r.period06, r.period07, r.period08, r.period09, r.period10);
+			AppendRow(row, r.accommodation, r.txt01, r.txt02, r.txt03, r.txt04, r.txt05, r.txt06, r.txt07, r.txt08, r.txt09, r.txt10);
 			accommodation.val("");
 			txt01.val("");
 			txt02.val("");
