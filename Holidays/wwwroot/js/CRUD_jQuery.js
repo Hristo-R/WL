@@ -6,44 +6,44 @@
 //		var row = $("#tblRows tr:last-child");
 //		row.find(".Edit").hide();
 //		row.find(".Delete").hide();
-//		row.find("span").html('&nbsp;');
+//		row.find("div").html('&nbsp;');
 //	}
 //});
 
 function AppendRow(row, accommodation, period01, period02, period03, period04, period05, period06, period07, period08, period09, period10) {
 	//Bindg Accommodation.
-	$(".fix", row).find("span").html(accommodation);
+	$(".fix", row).find("div").html(accommodation);
 	$(".fix", row).find("input").val(accommodation);
 
 	//Bindg Periods.
-	$(".period01", row).find("span").html(period01);
+	$(".period01", row).find("div").html(period01);
 	$(".period01", row).find("input").val(period01);
 
-	$(".period02", row).find("span").html(period02);
+	$(".period02", row).find("div").html(period02);
 	$(".period02", row).find("input").val(period02);
 
-	$(".period03", row).find("span").html(period03);
+	$(".period03", row).find("div").html(period03);
 	$(".period03", row).find("input").val(period03);
 
-	$(".period04", row).find("span").html(period04);
+	$(".period04", row).find("div").html(period04);
 	$(".period04", row).find("input").val(period04);
 
-	$(".period05", row).find("span").html(period05);
+	$(".period05", row).find("div").html(period05);
 	$(".period05", row).find("input").val(period05);
 
-	$(".period06", row).find("span").html(period06);
+	$(".period06", row).find("div").html(period06);
 	$(".period06", row).find("input").val(period06);
 
-	$(".period07", row).find("span").html(period07);
+	$(".period07", row).find("div").html(period07);
 	$(".period07", row).find("input").val(period07);
 
-	$(".period08", row).find("span").html(period08);
+	$(".period08", row).find("div").html(period08);
 	$(".period08", row).find("input").val(period08);
 
-	$(".period09", row).find("span").html(period09);
+	$(".period09", row).find("div").html(period09);
 	$(".period09", row).find("input").val(period09);
 
-	$(".period10", row).find("span").html(period10);
+	$(".period10", row).find("div").html(period10);
 	$(".period10", row).find("input").val(period10);
 
 	row.find(".Edit").show();
@@ -53,7 +53,7 @@ function AppendRow(row, accommodation, period01, period02, period03, period04, p
 
 //Add event handler --------------------------------------------------------------------.
 $("body").on("click", "#btnAdd", function () {
-	var accommodation = $("#fix");
+	var accommodation = $("#accommodation");
 	var txt01 = $("#period01");
 	var txt02 = $("#period02");
 	var txt03 = $("#period03");
@@ -83,7 +83,7 @@ $("body").on("click", "#btnAdd", function () {
 		dataType: "json",
 		success: function (r) {
 			var row = $("#tblRows tr:last-child");
-			if ($("#tblRows tr:last-child span").eq(0).html() != "&nbsp;") {
+			if ($("#tblRows tr:last-child div").eq(0).html() != "&nbsp;") {
 				row = row.clone();
 			}
 			AppendRow(row, r.fix, r.period01, r.period02, r.period03, r.period04, r.period05, r.period06, r.period07, r.period08, r.period09, r.period10);
@@ -108,7 +108,7 @@ $("body").on("click", "#tblRows .Edit", function () {
 	$("td", row).each(function () {
 		if ($(this).find("input").length > 0) {
 			$(this).find("input").show();
-			$(this).find("span").hide();
+			$(this).find("div").hide();
 		}
 	});
 	row.find(".Update").show();
@@ -122,10 +122,10 @@ $("body").on("click", "#tblRows .Update", function () {
 	var row = $(this).closest("tr");
 	$("td", row).each(function () {
 		if ($(this).find("input").length > 0) {
-			var span = $(this).find("span");
+			var div = $(this).find("div");
 			var input = $(this).find("input");
-			span.html(input.val());
-			span.show();
+			div.html(input.val());
+			div.show();
 			input.hide();
 		}
 	});
@@ -135,9 +135,9 @@ $("body").on("click", "#tblRows .Update", function () {
 	$(this).hide();
 
 	var customer = {};
-	customer.CustomerId = row.find(".CustomerId").find("span").html();
-	customer.Name = row.find(".Name").find("span").html();
-	customer.Country = row.find(".Country").find("span").html();
+	customer.CustomerId = row.find(".CustomerId").find("div").html();
+	customer.Name = row.find(".Name").find("div").html();
+	customer.Country = row.find(".Country").find("div").html();
 	$.ajax({
 		type: "POST",
 		url: "/Home/UpdateCustomer",
@@ -152,10 +152,10 @@ $("body").on("click", "#tblRows .Cancel", function () {
 	var row = $(this).closest("tr");
 	$("td", row).each(function () {
 		if ($(this).find("input").length > 0) {
-			var span = $(this).find("span");
+			var div = $(this).find("div");
 			var input = $(this).find("input");
-			input.val(span.html());
-			span.show();
+			input.val(div.html());
+			div.show();
 			input.hide();
 		}
 	});
@@ -169,7 +169,7 @@ $("body").on("click", "#tblRows .Cancel", function () {
 $("body").on("click", "#tblRows .Delete", function () {
 	if (confirm("Do you want to delete this row?")) {
 		var row = $(this).closest("tr");
-		var customerId = row.find("span").html();
+		var customerId = row.find("div").html();
 		$.ajax({
 			type: "POST",
 			url: "/Home/DeleteCustomer",
@@ -182,7 +182,7 @@ $("body").on("click", "#tblRows .Delete", function () {
 				} else {
 					row.find(".Edit").hide();
 					row.find(".Delete").hide();
-					row.find("span").html('&nbsp;');
+					row.find("div").html('&nbsp;');
 				}
 			}
 		});
