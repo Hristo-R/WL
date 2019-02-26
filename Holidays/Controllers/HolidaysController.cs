@@ -76,13 +76,23 @@
         [HttpPost]
         public ActionResult UpdateRow(HotelOlympicBibisTable row)
         {
-            //    var rows = db.HotelOlympicBibisTable;
-            //    HotelOlympicBibisTable updatedRows = (from r in rows
-            //                                where r.Id == row.Id
-            //                                select r).FirstOrDefault();
-            //    updatedRows.Period01 = row.Period01;
-            //    updatedRows.Period02 = row.Period02;
-            //    rows.SaveChanges();
+            var rows = db.HotelOlympicBibisTable;
+            HotelOlympicBibisTable updatedRows = (from r in rows
+                                                  where r.Id == row.Id
+                                                  select r).FirstOrDefault();
+            updatedRows.Accommodation = row.Accommodation;
+            updatedRows.Period01 = row.Period01;
+            updatedRows.Period02 = row.Period02;
+            updatedRows.Period03 = row.Period03;
+            updatedRows.Period04 = row.Period04;
+            updatedRows.Period05 = row.Period05;
+            updatedRows.Period06 = row.Period06;
+            updatedRows.Period07 = row.Period07;
+            updatedRows.Period08 = row.Period08;
+            updatedRows.Period09 = row.Period09;
+            updatedRows.Period10 = row.Period10;
+
+            this.db.SaveChanges();
 
             return new EmptyResult();
         }

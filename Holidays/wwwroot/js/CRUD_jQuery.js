@@ -1,14 +1,14 @@
-﻿//$(function () {
-//	//Remove the dummy row if data present.
-//	if ($("#tblRows tr").length > 2) {
-//		$("#tblRows tr:eq(1)").remove();
-//	} else {
-//		var row = $("#tblRows tr:last-child");
-//		row.find(".Edit").hide();
-//		row.find(".Delete").hide();
-//		row.find("div").html('&nbsp;');
-//	}
-//});
+﻿$(function () {
+	//Remove the dummy row if data present.
+	if ($("#tblRows tr").length > 2) {
+		$("#tblRows tr:eq(1)").remove();
+	} else {
+		var row = $("#tblRows tr:last-child");
+		row.find(".Edit").hide();
+		row.find(".Delete").hide();
+		row.find("div").html('&nbsp;');
+	}
+});
 
 function AppendRow(row, accommodation, period01, period02, period03, period04, period05, period06, period07, period08, period09, period10) {
 	//Bindg Accommodation.
