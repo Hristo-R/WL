@@ -2,7 +2,8 @@
 {
     using Holidays.Data;
     using Holidays.Models;
-    using Holidays.Web.ViewModels;
+    using Holidays.Web.Models.BindingModels;
+    using Holidays.Web.Models.ViewModels;
     using Microsoft.AspNetCore.Mvc;
     using System.Linq;
 
@@ -49,10 +50,24 @@
         }
 
         [HttpPost]
-        public JsonResult InsertRow(HotelOlympicBibisTable row)
+        public JsonResult InsertRow(HotelOlympicBibisTableRowsBindingModel row)
         {
-            var newRow = new HotelOlympicBibisTable();
-            this.db.Add(newRow);
+            var newRow = new HotelOlympicBibisTable
+            {
+                Accommodation = row.Accommodation,
+                Period01 = row.Period01,
+                Period02 = row.Period02,
+                Period03 = row.Period03,
+                Period04 = row.Period04,
+                Period05 = row.Period05,
+                Period06 = row.Period06,
+                Period07 = row.Period07,
+                Period08 = row.Period08,
+                Period09 = row.Period09,
+                Period10 = row.Period10,
+            };
+
+            this.db.HotelOlympicBibisTable.Add(newRow);
             this.db.SaveChanges();
            
             return Json(row);
